@@ -1,0 +1,7 @@
+relationship_id,source_id,target_id,relationship_type,source,ownership_pct,confidence,valid_from,valid_to,evidence,analyst_status
+DEMO-R001,DEMO-E003,DEMO-E002,OWNS,Fictional Demonstration,60,1.0,2024-01-01,,"Fictional test relationship: 60% ownership.",confirmed_demo
+DEMO-R002,DEMO-E002,DEMO-E001,OWNS,Fictional Demonstration,55,1.0,2024-02-01,,"Fictional test relationship: 55% ownership.",confirmed_demo
+DEMO-R003,DEMO-E005,DEMO-E001,DIRECTOR_OF,Fictional Demonstration,,1.0,2025-01-15,,"Fictional directorship.",confirmed_demo
+DEMO-R004,DEMO-E005,DEMO-E004,DIRECTOR_OF,Fictional Demonstration,,1.0,2025-03-10,,"Fictional shared director.",confirmed_demo
+DEMO-R005,DEMO-E002,DEMO-E006,OWNS,Fictional Demonstration,35,1.0,2024-05-01,,"Fictional minority ownership below the configured threshold.",confirmed_demo
+DEMO-R006,DEMO-E003,DEMO-E006,CONTROLS,Fictional Demonstration,,0.8,2024-06-01,,"Fictional control relationship without documented majority ownership.",unreviewed

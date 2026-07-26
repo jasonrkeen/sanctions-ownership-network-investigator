@@ -1,0 +1,6 @@
+address_id,entity_id,address,city_state_postal,country,source,remarks
+DEMO-ADDR-001,DEMO-E001,410 Example Commerce Way,Nashville TN 37201,United States,Fictional Demonstration,Fictional address.
+DEMO-ADDR-002,DEMO-E004,410 Example Commerce Way,Nashville TN 37201,United States,Fictional Demonstration,Fictional shared address.
+DEMO-ADDR-003,DEMO-E002,8 Meridian Square,Port Azure 10020,Republic of Example,Fictional Demonstration,Fictional address.
+DEMO-ADDR-004,DEMO-E003,22 Riverstone Avenue,Port Azure 10021,Republic of Example,Fictional Demonstration,Fictional address.
+DEMO-ADDR-005,DEMO-E006,19 Northstar Quay,Port Azure 10025,Republic of Example,Fictional Demonstration,Fictional address.

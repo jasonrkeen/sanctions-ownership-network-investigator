@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sanctions-ownership-network-investigator"
+version = "1.0.0"
+description = "Source-backed sanctions screening and corporate ownership network investigation MVP."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Jason Keen"}]
+dependencies = []
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.40", "graphviz>=0.20"]
+pdf = ["reportlab>=4.0"]
+postgres = ["psycopg[binary]>=3.2"]
+neo4j = ["neo4j>=5.25"]
+dev = ["pytest>=8.0", "ruff>=0.8"]
+all = [
+    "streamlit>=1.40",
+    "graphviz>=0.20",
+    "reportlab>=4.0",
+    "psycopg[binary]>=3.2",
+    "neo4j>=5.25",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

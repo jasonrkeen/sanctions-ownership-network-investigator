@@ -1,0 +1,3 @@
+# The command-line MVP uses only Python's standard library.
+# Install optional user-interface and PDF dependencies with:
+# pip install -e ".[dashboard,pdf]"

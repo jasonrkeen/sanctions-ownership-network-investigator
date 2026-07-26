@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible software defect using public or fictional data
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, nonpublic personal information, or sensitive
+        investigation records.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - CLI pipeline
+        - OFAC ingestion
+        - GLEIF enrichment
+        - Matching or ownership analysis
+        - Dashboard
+        - Case workflow or review
+        - Comparison or export
+        - Release packaging
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Use the fictional sample or public source data where possible.
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. Select ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Windows 11, Python 3.12, Streamlit version..."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs or screenshots
+      description: Remove paths, credentials, and sensitive case data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials and nonpublic or sensitive case data.
+          required: true

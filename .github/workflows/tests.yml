@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run standard-library test suite
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python sources
+        run: python -m compileall -q main.py app.py src tests scripts
+      - name: Check publication readiness
+        run: python scripts/check_publication.py
+      - name: Run demonstration pipeline
+        run: python main.py --mode sample --query "Harbor Meridian Trading LLC"
+      - name: Validate clean release
+        run: python scripts/build_release.py

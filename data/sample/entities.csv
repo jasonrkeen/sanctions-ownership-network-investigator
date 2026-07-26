@@ -1,0 +1,7 @@
+entity_id,name,entity_type,source,designated,programs,country,identifiers,remarks,retrieved_at
+DEMO-E001,Harbor Meridian Trading LLC,Entity,Fictional Demonstration,false,[],United States,"{""registration_number"": ""HM-24001""}","Fictional target used only for testing.",2026-07-25T00:00:00+00:00
+DEMO-E002,Meridian Holdings PLC,Entity,Fictional Demonstration,false,[],Republic of Example,"{""lei"": ""DEMOLEI000000000002""}","Fictional intermediate holding company.",2026-07-25T00:00:00+00:00
+DEMO-E003,Alex Riverstone,Individual,Fictional Demonstration,true,"[""DEMO-SDN""]",Republic of Example,"{""demo_id"": ""DEMO-PERSON-003""}","Fictional direct designation used only to test ownership propagation.",2026-07-25T00:00:00+00:00
+DEMO-E004,Bluehaven Consulting Ltd,Entity,Fictional Demonstration,false,[],United States,"{""registration_number"": ""BC-88211""}","Fictional entity sharing a registered address with the target.",2026-07-25T00:00:00+00:00
+DEMO-E005,Dana Vale,Individual,Fictional Demonstration,false,[],United States,"{""demo_id"": ""DEMO-PERSON-005""}","Fictional director.",2026-07-25T00:00:00+00:00
+DEMO-E006,Northstar Maritime Services SA,Entity,Fictional Demonstration,false,[],Republic of Example,"{""registration_number"": ""NM-71009""}","Fictional related operating company.",2026-07-25T00:00:00+00:00

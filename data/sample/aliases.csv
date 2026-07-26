@@ -1,0 +1,5 @@
+alias_id,entity_id,name,alias_type,source,weak,remarks
+DEMO-A001,DEMO-E001,Harbor Meridian Trading,aka,Fictional Demonstration,false,Fictional alias.
+DEMO-A002,DEMO-E002,Meridian HLDGS PLC,aka,Fictional Demonstration,false,Fictional abbreviated alias.
+DEMO-A003,DEMO-E003,A. Riverstone,weak aka,Fictional Demonstration,true,Fictional weak alias for confirmation only.
+DEMO-A004,DEMO-E006,Northstar Maritime,aka,Fictional Demonstration,false,Fictional short-form alias.
