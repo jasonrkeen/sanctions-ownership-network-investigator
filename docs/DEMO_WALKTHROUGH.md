@@ -51,7 +51,7 @@ Use fictional reviewer names and notes in screenshots.
 Stop Streamlit with `Ctrl+C`, then run:
 
 ```powershell
-python main.py --mode sample --query "Northstar Components GmbH"
+python main.py --mode sample --query "Northstar Maritime Services SA"
 ```
 
 Restart the dashboard. The case registry should now contain both runs.

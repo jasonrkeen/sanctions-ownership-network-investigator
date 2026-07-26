@@ -86,6 +86,18 @@ review status. The output is analyst support—not a final legal determination.
 | [Version 1.0.0 release notes](docs/RELEASE_NOTES_v1.0.0.md) | Installation, highlights, and known limitations |
 | [Release checklist](docs/RELEASE_CHECKLIST.md) | Validation and archive requirements |
 
+## Dashboard preview
+
+| Case investigation | Ownership network |
+|---|---|
+| ![Fictional Harbor Meridian investigation summary](docs/images/01-case-summary.png) | ![Fictional corporate ownership network](docs/images/04-ownership-network.png) |
+| **Screening evidence** | **Archived-case comparison** |
+| ![Identity-resolution and sanctions-screening evidence](docs/images/03-screening-evidence.png) | ![Comparison of fictional investigation cases](docs/images/06-case-comparison.png) |
+
+Additional views demonstrate the
+[ownership finding](docs/images/02-ownership-finding.png) and
+[recommended analyst actions and case artifacts](docs/images/05-analyst-actions.png).
+All displayed entities and relationships are fictional.
 ## Demonstration finding
 
 The bundled example is entirely fictional:
