@@ -2,7 +2,7 @@ services:
   dashboard:
     build: .
     ports:
-      - "8501:8501"
+      - "127.0.0.1:8501:8501"
     volumes:
       - ./outputs:/app/outputs
     depends_on:
@@ -16,9 +16,7 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-soni}
       POSTGRES_USER: ${POSTGRES_USER:-soni}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
-    ports:
-      - "5432:5432"
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your local .env}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./sql/postgres_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
@@ -31,10 +29,10 @@ services:
   neo4j:
     image: neo4j:5-community
     environment:
-      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-change-me-now}
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?Set NEO4J_PASSWORD in your local .env}
     ports:
-      - "7474:7474"
-      - "7687:7687"
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
     volumes:
       - neo4j_data:/data
       - ./outputs/latest/neo4j:/import
@@ -42,7 +40,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "cypher-shell -u neo4j -p ${NEO4J_PASSWORD:-change-me-now} 'RETURN 1' >/dev/null 2>&1 || exit 1",
+          "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#neo4j/}\" 'RETURN 1' >/dev/null 2>&1 || exit 1",
         ]
       interval: 10s
       timeout: 5s
