@@ -225,7 +225,8 @@ excludes them from OFAC 50 Percent Rule propagation.
 
 ## Docker environment
 
-Copy `.env.example` to `.env`, replace the demonstration passwords, and run:
+Copy `.env.example` to `.env`, set distinct strong values for
+`POSTGRES_PASSWORD` and `NEO4J_PASSWORD`, and run:
 
 ```powershell
 docker compose up --build
@@ -236,12 +237,25 @@ Services:
 | Service | Address | Purpose |
 |---|---|---|
 | Streamlit | `http://localhost:8501` | Analyst interface |
-| PostgreSQL | `localhost:5432` | Relational staging and case data |
+| PostgreSQL | `postgres:5432` (Compose network only) | Relational staging and case data |
 | Neo4j Browser | `http://localhost:7474` | Graph exploration |
 | Neo4j Bolt | `bolt://localhost:7687` | Application connectivity |
 
 The command-line MVP writes to SQLite by default. The included PostgreSQL schema
 and Neo4j exports are the migration foundation for the next phase.
+
+Compose refuses startup when either database password is missing or empty.
+Published dashboard and Neo4j ports bind only to `127.0.0.1`; PostgreSQL is not
+published to the host. `POSTGRES_HOST` and `POSTGRES_PORT` in the example file
+are optional host-client settings and do not publish a Docker port. To use a
+host PostgreSQL client, explicitly add a loopback-only port mapping in a local
+override. Never commit `.env` or render a credential-bearing Compose config
+into a public log. Existing database volumes retain their initialized passwords;
+changing `.env` does not rotate those credentials.
+
+This remains a local, single-user demonstration without application
+authentication. Loopback binding does not make it suitable for shared hosting
+or protect it from other users on the same machine.
 
 ## Analytical workflow
 
