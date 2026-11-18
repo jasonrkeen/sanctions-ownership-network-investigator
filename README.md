@@ -28,6 +28,20 @@ source-backed case directory without requiring a package installation or
 network connection. See the [demonstration walkthrough](docs/DEMO_WALKTHROUGH.md)
 for the dashboard, workflow, analyst-review, comparison, and export tour.
 
+## Reproduction and validation status
+
+Evidence reviewed November 18, 2026. This table describes the recorded checks at the revision below, not a new independent validation or release.
+
+| Item | Status and evidence |
+| --- | --- |
+| Version and revision | Published release: [v1.0.0](https://github.com/jasonrkeen/sanctions-ownership-network-investigator/releases/tag/v1.0.0). The checks below apply to [208b185](https://github.com/jasonrkeen/sanctions-ownership-network-investigator/tree/208b185fa10d74c40614231db8d3ebcb4d2f5bff); use `git checkout 208b185fa10d74c40614231db8d3ebcb4d2f5bff` to inspect that revision. |
+| Inputs and dates | The bundled sample is fictional and versioned with the code; it has no real-world observation date. Live OFAC and optional GLEIF results depend on retrieval time and must be reviewed against retained source records. GLEIF accounting-parent links are not percentage ownership. |
+| Environment | Python 3.11+ is recommended; the linked CI run used Python 3.12. The sample CLI uses the standard library and requires no package installation, credentials, or network access. Dashboard/PDF dependencies are optional; see [Quick start](#quick-start). |
+| Reproduce from the repository root | `python main.py --mode sample --query "Harbor Meridian Trading LLC"` |
+| Expected result | `ownership_derived_candidate`; case JSON, Markdown brief, graph, SQLite database, and export files under `outputs/cases/<run_id>/`. PDF requires ReportLab. The classification is deterministic; timestamps and run identifiers need not be byte-identical. See the [walkthrough](docs/DEMO_WALKTHROUGH.md). |
+| Verified checks | [CI run 39292533365](https://github.com/jasonrkeen/sanctions-ownership-network-investigator/actions/runs/39292533365) passed the unit suite, source compilation, publication audit, sample pipeline, and clean-release packaging check. Local checks: `python -m unittest discover -s tests -v`, then `python scripts/check_publication.py`. A packaging check does not publish a release. |
+| Validation limits | Software and fictional-case checks do not measure production screening accuracy. Name scores are not calibrated probabilities; effective-date validation is not enforced; representative production-population validation remains absent. Outputs require analyst review and are not legal determinations. See the [model card](docs/MODEL_CARD.md). |
+
 ## What makes this different
 
 Conventional list screening compares a name with a sanctions list. This project
